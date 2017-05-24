@@ -24,11 +24,6 @@ public class UsuarioApi {
     @Autowired
     private InfoUsuarioDao infoUsuarioDao;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Iterable<Usuario> listarUsuarios() {
-        return usuarioDao.findAll();
-    }
-
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
     public Usuario criarUsuario(@RequestBody Usuario u) {
         Calendar c = Calendar.getInstance();

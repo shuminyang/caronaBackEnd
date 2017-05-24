@@ -25,23 +25,19 @@ public class LoginApi {
         if (usuario == null) {
             return new LoginResponse("Erro no login.", "Login não encontrado");
         } else {
-            u = encriptarSenha(u);
+            String salt = usuario.getSenha().split(",")[1];
+            String senhaHash = encriptarSenha(u, salt);
 
-            if (!usuario.getSenha().equals(u.getSenha())) {
+            if (!usuario.getSenha().equals(senhaHash + "," + salt)) {
                 return new LoginResponse("Erro no login.", "Senha incorreta");
             }
 
             return new LoginResponse(null,"Login permitido.");
         }
-
-
     }
 
-    private Usuario encriptarSenha(Usuario u) {
-        String salt = BCrypt.gensalt();
+    private String encriptarSenha(Usuario u, String salt) {
         String hash_pass = BCrypt.hashpw(u.getSenha(), salt);
-
-        u.setSenha(hash_pass + "," + salt);
-        return u;
+        return hash_pass;
     }
 }

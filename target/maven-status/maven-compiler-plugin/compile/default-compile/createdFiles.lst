@@ -1,0 +1,9 @@
+br/com/caronaparatodos/responsecontrol/LoginResponse.class
+br/com/caronaparatodos/repositorio/InfoUsuarioDao.class
+br/com/caronaparatodos/restfacade/LoginApi.class
+br/com/caronaparatodos/restfacade/UsuarioApi.class
+br/com/caronaparatodos/App.class
+br/com/caronaparatodos/entidades/Usuario.class
+br/com/caronaparatodos/restfacade/InfoUsuarioApi.class
+br/com/caronaparatodos/entidades/InfoUsuario.class
+br/com/caronaparatodos/repositorio/UsuarioDao.class

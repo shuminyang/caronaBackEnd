@@ -1,6 +1,10 @@
 package br.com.caronaparatodos.responsecontrol;
 
-public class LoginResponse {
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
+@XmlRootElement
+public class LoginResponse implements Serializable{
 
     private String motivo;
     private String erro;
@@ -10,4 +14,19 @@ public class LoginResponse {
         this.erro = erro;
     }
 
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getErro() {
+        return erro;
+    }
+
+    public void setErro(String erro) {
+        this.erro = erro;
+    }
 }
